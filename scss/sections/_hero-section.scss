@@ -1,0 +1,25 @@
+.hero-overlay{
+  padding: {
+    left : 10px;
+    right : 10px;
+  }
+  z-index : 1;
+  &:after{
+    @include position-style(top,left);
+    background : linear-gradient(to right, $primary, $secondary);
+    opacity: .3;
+    z-index: -1;
+  }
+}
+
+
+//delete
+  .cursor{
+    position : absolute;
+    content: "";
+    width : 30px;
+    height : 30px;
+    background: #fff;
+    border-radius: 50%;
+    z-index : 99;
+  }

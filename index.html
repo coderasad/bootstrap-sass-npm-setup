@@ -1,0 +1,116 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap v5 with sass</title>
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/vendors/css/glightbox.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<!--START THE NAVBAR SECTION-->
+<nav class="navbar navbar-expand-lg navbar-dark menu py-sm-3">
+    <div class="container">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Service</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">faq</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">contact</a>
+                </li>
+            </ul>
+            <button type="button" class="btn-rounded ">+880 123456789
+                <span><i class="fas fa-phone-alt"></i></span>
+            </button>
+        </div>
+    </div>
+</nav>
+<section class="hero-section mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <div class="position-relative">
+                    <img src="assets/images/hero.svg" alt="" class="w-100">
+                    <button class="glightbox btn btn-primary top-50 start-50 translate-middle position-absolute"><i
+                            class="fas fa-play-circle display-6 "></i>
+                    </button>
+                </div>
+            </div>
+            <div class="col-6 p-5 cursor-body rounded shadow-lg position-relative hero-overlay">
+
+                <div class="cursor"></div>
+                <button type="button" class="btn btn-primary position-relative">
+                    Alerts <span
+                        class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-2"><span
+                        class="visually-hidden">unread messages</span></span>
+                </button>
+                <div class="position-relative m-4">
+                    <div class="progress" style="height: 1px;">
+                        <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50"
+                             aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <button type="button"
+                            class="position-absolute top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill"
+                            style="width: 2rem; height:2rem;">1
+                    </button>
+                    <button type="button"
+                            class="position-absolute top-0 start-50 translate-middle btn btn-sm btn-primary rounded-pill"
+                            style="width: 2rem; height:2rem;">2
+                    </button>
+                    <button type="button"
+                            class="position-absolute top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill"
+                            style="width: 2rem; height:2rem;">3
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- background bottom style svg-->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#6f42c1" fill-opacity="1"
+              d="M0,160L48,176C96,192,192,224,288,202.7C384,181,480,107,576,80C672,53,768,75,864,106.7C960,139,1056,181,1152,213.3C1248,245,1344,267,1392,277.3L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+    </svg>
+</section>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="assets/vendors/js/glightbox.min.js"></script>
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+
+<script>
+
+    let cursorBody = document.querySelector('.cursor-body');
+    let cursor = document.querySelector('.cursor');
+    cursorBody.onmousemove = function (e){
+        let x = e.clientX - cursorBody.offsetLeft;
+        let y = e.pageY - cursorBody.offsetTop;
+        cursor.style.left = x + 'px';
+        cursor.style.top = y + 'px';
+        console.log(e.pageY, e.clientY)
+    }
+
+
+
+    // pop up video
+    const lightbox = GLightbox({
+        'href'          : 'https://www.youtube.com/watch?v=Ga6RYejo6Hk',
+        'type'          : 'video',
+        'source'        : 'youtube', //vimeo, youtube or local
+        'width'         : 900,
+        'autoPlayVideos': 'true'
+    });
+</script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

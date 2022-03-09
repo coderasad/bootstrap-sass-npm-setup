@@ -1,0 +1,45 @@
+.menu{
+  @include gradient;
+  .nav-link{
+    font-size: 18px;
+    font-weight: 700;
+    color: $white !important;
+    margin-right : 30px;
+    text-transform: capitalize;
+  }
+}
+
+.btn-rounded{
+  padding: 10px 55px 10px 20px;
+  position: relative;
+  font-weight: 700;
+  border: 1px solid rgba($white, .6);
+  background : $white;
+  transition: all .5s;
+  border-radius: 40px;
+  span{
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    background: $primary;
+    border-radius: 50%;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+  }
+  &:hover{
+    @include gradient;
+    color: $white;
+    span{
+      @include gradient;
+    }
+  }
+
+/*  @include media-breakpoint-down(sm){
+    display : none;
+  }*/
+}
